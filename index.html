@@ -47,12 +47,12 @@
   </head>
   <body ng-app="app">
     <div  ng-controller="AppController"  class="container" role="main">
-     <div class="row">
-        <div class="col-md-6">
+     <div class="row title">
+        <div class="col-md-4 col-sm-4">
           <h1><span class="glyphicon glyphicon-time"></span> 24hq</h1>
         </div>
-        <div class="col-md-6 text-right">
-          <h2><span  class="label label-warning" id="clock"></span> until next question</h2>
+        <div class="col-md-8 col-sm-8 text-right">
+          <h2><span class="label label-warning" id="clock"></span> <small>until next question</small></h2>
           <script type="text/javascript">
             var todaysDate = $.formatDateTime('yy/mm/dd', new Date());
             $('#clock').countdown(todaysDate + ' 23:59:59', function(event) {
@@ -62,16 +62,16 @@
         </div>
       </div>
      <div class="jumbotron">
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row social">
+          <div class="col-md-6 col-sm-6 col-xs-6">
             <a class="twitter-share-button" href="https://twitter.com/share" data-text="#24hq - test yourself!" data-url="http://24hq.io">Tweet</a>
           </div>
-          <div class="col-md-6 text-right">
+          <div class="col-md-6 col-sm-6 col-xs-6 text-right">
             <div class="fb-like" data-href="http://www.24hq.io" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
             </div>
           </div>          
       </div> 
-      
+
         <h1 id="question" class="text-center" ng-click="chooseOption">{{question.title}}</h1>
         <div id="body">
           <div class="list-group">

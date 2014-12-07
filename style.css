@@ -5,3 +5,9 @@
 .list-group-item {
 	margin-bottom: 10px !important;
 }
+
+@media (max-width: 768px) {
+    .title div {
+        text-align: center;
+    }
+}
