@@ -74,7 +74,7 @@
 
         <h1 id="question" class="text-center" ng-click="chooseOption">{{question.title}}</h1>
         <div id="body">
-          <div class="list-group">
+          <div class="list-group option">
             <a href="" class="list-group-item text-center" ng-class="{active: $index == chosenOption, correct: questionOption.correct, disabled: done}" ng-repeat="questionOption in question.options" ng-click="chooseOption($index)" > 
 
               <h2 class="list-group-item-heading">{{questionOption.title}}</h2>

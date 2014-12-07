@@ -10,4 +10,8 @@
     .title div {
         text-align: center;
     }
+
+    .option .list-group-item-text {
+    	font-size: 15px !important;
+    }
 }
