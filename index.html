@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
     <head prefix="og: http://ogp.me/ns#"> 
       <meta property="og:title" content="24hq - test yourself!">
       <meta property="og:site_name" content="24hq">
@@ -25,11 +25,16 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>  
+    <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/app.js"></script>
+    
     <script src="bower_components/jquery.countdown/dist/jquery.countdown.min.js"></script>
     <script src="bower_components/jquery.formatDateTime/dist/jquery.formatDateTime.min.js"></script>
-    <script src="scripts/app.js"></script>
+    
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -45,14 +50,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
-  <body ng-app="app">
+  <body>
     <div  ng-controller="AppController"  class="container" role="main">
+
+
+    <script type="text/ng-template" id="NotifyController.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Stay up 2 date with the latest questions</h3>
+        </div>
+        <div class="modal-body">
+
+                    <input type="text" class="form-control input-lg" id="emailAddress" placeholder="Email address">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">Stay up 2 date</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
      <div class="row title">
         <div class="col-md-4 col-sm-4">
           <h1><span class="glyphicon glyphicon-time"></span> 24hq</h1>
         </div>
         <div class="col-md-8 col-sm-8 text-right">
-          <h2><span class="label label-warning" id="clock"></span> <small>until next question</small></h2>
+          <h2><span class="label label-warning" id="clock"></span> <small>until next question <button ng-click="notify()" type="button" class="btn btn-link"><strong>Notify me!</strong></button></small> </h2>
           <script type="text/javascript">
             var todaysDate = $.formatDateTime('yy/mm/dd', new Date());
             $('#clock').countdown(todaysDate + ' 23:59:59', function(event) {
@@ -96,6 +117,14 @@
       </div> 
 
 
+</div>
+
+
+
+
+
+
+</div>
 
 
 <script type="text/javascript">
