@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head prefix="og: http://ogp.me/ns#"> 
+      <meta property="og:title" content="24hq - test yourself!">
+      <meta property="og:site_name" content="24hq">
+      <meta property="og:url" content="http://www.24hq.io">
+      <meta property="og:description" content="Test and improve yourself in a leasurely pace - 24h question">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <meta property="og:image" content="http://24hq.io/24hq.png">
+     <meta property="og:image:type" content="image/png">
+     <meta property="og:image:width" content="300">
+     <meta property="og:image:height" content="300">
+
+     <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+
     <title>24hq.io</title>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -72,9 +84,21 @@
           <div class="alert alert-danger" role="alert">
             <h1><span class="glyphicon glyphicon-remove"></span> Wrong!</h1> <h4>Come back tomorrow for a new question, apprentice!</h4>
           </div>
-      </div>      
       </div> 
-    </div>
+
+        <div class="text-right">
+          <div class="fb-like" data-href="http://www.24hq.io" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        </div>
+      </div> 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=759216577490456&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
   </body>
 </html>
