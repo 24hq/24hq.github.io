@@ -4,6 +4,7 @@
       <meta property="og:title" content="24hq - test yourself!">
       <meta property="og:site_name" content="24hq">
       <meta property="og:description" content="Test and improve yourself in a leasurely pace - 24h question">
+      <meta property="description" content="Test and improve yourself in a leasurely pace - 24h question">
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,14 +59,23 @@
         <div class="modal-header">
             <h3 class="modal-title">Stay up 2 date with the latest questions</h3>
         </div>
-        <div class="modal-body">
+        <form name="notify">
+        <div class="modal-body form-group" ng-class="{'has-error' : notify.$invalid}">
 
-                    <input type="text" class="form-control input-lg" id="emailAddress" placeholder="Email address">
+                    <input type="email" ng-model="emailAddress" class="form-control input-lg" id="emailAddress" name="emailAddress" placeholder="Email address">
+                    <tt></tt><br/>
+                  
         </div>
+        </form>
         <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">Stay up 2 date</button>
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="notify.$invalid || !emailAddress.length">Stay up 2 date</button>
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            <div class="alert alert-warning text-left follow" role="alert">
+              <span>Alternatively you can <a href="https://twitter.com/24HourQuestion" target="_blank">follow @24HourQuestion</a> on Twitter and we'll get you posted.</span>
+              
+            </div>
         </div>
+
     </script>
 
      <div class="row title">
@@ -85,7 +95,8 @@
      <div class="jumbotron">
         <div class="row social">
           <div class="col-md-6 col-sm-6 col-xs-6">
-            <a class="twitter-share-button" href="https://twitter.com/share" data-text="#24hq - test yourself!" data-url="http://24hq.io">Tweet</a>
+            <a class="twitter-share-button" href="https://twitter.com/share" data-text="Test and improve yourself in a leasurely pace" data-url="http://24hq.io">Tweet</a>
+            
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6 text-right">
             <div class="fb-like" data-href="http://www.24hq.io" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">

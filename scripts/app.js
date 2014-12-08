@@ -3,7 +3,6 @@
 angular.module('app', ['ui.bootstrap']);
 angular.module('app').controller('AppController', function($scope, $http, $modal) {
 
-var emails = new Firebase('https://fiery-torch-636.firebaseio.com');
 
 
 $http.get('questions.json').success(function(data) {
@@ -27,10 +26,6 @@ $scope.check = function() {
 	$scope.showNotOk = !($scope.question.options[$scope.chosenOption].correct)
 }
 
-$scope.subscribe = function() {
-	emails.push( {email: email} );
-}
-
   $scope.notify = function (size) {
 
     var modalInstance = $modal.open({
@@ -52,7 +47,11 @@ $scope.subscribe = function() {
 });
 
 angular.module('app').controller('NotifyController', function ($scope, $modalInstance, items) {
+
+  var emails = new Firebase('https://fiery-torch-636.firebaseio.com');	
+
   $scope.ok = function () {
+  	emails.push( {email: "eduards.sizovs@gmail.com"} );
     $modalInstance.close();
   };
 
