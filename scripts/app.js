@@ -48,7 +48,7 @@ $scope.check = function() {
 
 angular.module('app').controller('NotifyController', function ($scope, $modalInstance, items) {
 
-  var emails = new Firebase('https://fiery-torch-636.firebaseio.com');	
+  var emails = new Firebase('https://fiery-torch-636.firebaseio.com/subscribers');	
 
   $scope.ok = function () {
   	emails.push( {email: "eduards.sizovs@gmail.com"} );
