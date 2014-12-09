@@ -51,7 +51,7 @@ angular.module('app').controller('NotifyController', function ($scope, $modalIns
   var emails = new Firebase('https://fiery-torch-636.firebaseio.com/subscribers');	
 
   $scope.ok = function () {
-  	emails.push( {email: "eduards.sizovs@gmail.com"} );
+  	emails.push( {email: $scope.emailAddress} );
     $modalInstance.close();
   };
 
